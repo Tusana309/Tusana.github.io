@@ -37,7 +37,9 @@ html, body {
   top: 35px;
   width: 100%;
 }
-
+.menu:hover, .menu li:hover{
+  background-color: rgb(56, 206, 94);
+}
 .menu li:hover ul {
   height: 100px;
   opacity: 1;
@@ -50,9 +52,9 @@ html, body {
   padding: 5px 20px;
   text-decoration: none;
 }
-.menu ul a:hover{
+/* .menu ul a:hover{
   color:#fe1919
-}
+} */
 body {
  background: #010101;
  overflow: hidden;

@@ -16,6 +16,9 @@ html, body {
   float: left;
 
 }
+.menu:hover, .menu li:hover{
+  background-color: rgb(56, 206, 94);
+}
 .menu > li > a {
   background: #3468ca6b;
   color: #fff;
@@ -48,9 +51,9 @@ html, body {
   padding: 5px 20px;
   text-decoration: none;
 }
-.menu ul a:hover{
+/* .menu ul a:hover{
   color:#fe1919
-}
+} */
 button {
   font-family: ui-sans-serif, sysetm-ui, sans-serif;
   margin: 5px 5px 5px 5px;
