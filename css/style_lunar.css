@@ -1,0 +1,121 @@
+/* lunar eclipse */
+
+html, body {
+     width: 100%;
+     overflow-x: hidden;
+   }
+*, *:before, *:after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+body {
+ background: #010101;
+ overflow: hidden;
+}
+button {
+     font-family: ui-sans-serif, sysetm-ui, sans-serif;
+     float: right;
+     margin: 5px 5px 5px 5px;
+     max-width: 60rem;
+     padding: 2rem;
+     background-color: rgba(100, 148, 237, 0.977);
+     border: 0;
+     border-radius: 0.25rem;
+     color: #FFF;
+     /* display: inline-block; */
+     margin-block-end: 0.5rem;
+     padding: 1rem;
+   }
+
+#solar-system{
+     float:left;
+}
+#solar-system a{
+     color:#ffff;
+     text-decoration: none;
+}
+ button:hover{
+   background-color: #7b78d6;
+ }
+ .loader {
+     width: 100%;
+     height: 100vh;
+           position: fixed;
+           top: 0;
+           z-index: 1031;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin: 0;
+        padding: 0;
+     background: #c9eeff;
+     }
+.sky {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       font-size: 100px;
+       margin-left: -50px;
+       margin-top: -50px;
+     }
+.moon {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ width: 250px;
+ height: 250px;
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+ background: #DBE6E0;
+ box-shadow: 0 0 50px rgba(219, 230, 224, 1);
+}
+.moon{
+     background-image:  url("../img/moon.png");
+}
+.moon:after{
+      content: "";
+      box-shadow: 
+        -20vw -25vh 1px #FFF,
+        -20vw 0vh 1px #FFF,
+        -10vw 0vh 1px #FFF,
+        -40vw -20vh 1px #FFF,
+        -30vw 47vh 1px #FFF,
+        -20vw 50vh 1px #FFF,
+        40vw -25vh 1px #FFF,
+        44vw 47vh 1px #FFF,
+        54vw 5vh 1px #FFF,
+        88vw 82vh 1px #fff;
+      width: 3px;
+      height: 3px;
+      position: absolute;
+      border-radius: 50%;
+}
+.sun {
+ position: absolute;
+ left: 10px;
+ top: 1px;
+ width: 250px;
+ height: 250px;
+ border-radius: 50%;
+ background: #010101;
+ box-shadow: inset 0 0 50px rgba(150, 150, 150, 0.2);
+ animation: eclipse 20s infinite linear;
+ transform-origin: 50% 180%;
+ transform: rotate(-60deg);
+}
+
+@keyframes eclipse {
+ 0% {
+      transform: rotate(-80deg); 
+ }
+ 
+ 90% {
+      transform: rotate(60deg); 
+ }
+ 
+ 100%{
+   transform: rotate(300deg);
+ }
+}
