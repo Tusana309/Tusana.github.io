@@ -7,19 +7,46 @@
     <link rel="icon" type="image/png" href="./img/favicon-32x32_eclipse.png" sizes="32x32" />
     <title>Nhật Thực</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style_solar.css">
-
+     
 </head>
-<body>   
+<body class="preloading"> 
+    <div class="load">
+        <img src="./img/Preloader_3.gif">
+    </div>
+
     <div class="universe-solar">
         <div>
-            <button id="solar-system"><a href="index.html">Hệ Mặt Trời</a></button>
             <button id="pause-solar">Pause</button>
+            <ul class="menu">
+                <li>
+                  <a href="#">Menu</a>
+                  <ul>
+                    <li><a href="index.html">Hệ Mặt Trời</a></li>
+                    <li><a href="indexLunar.html">Nguyệt Thực</a></li>
+                  </ul>
+                </li>
+              </ul>
         </div>
         <div class="sun-solar"></div>
         <div class="moon-solar"></div>
+        <div id="circle">
+            <div  class="container">
+                <div class="sun"></div>
+                <div class="earth"><div class="moon">
+                </div>
+                </div>
+            </div>
         
+        </div>
     </div>
-    <script src="./js/scriptSolar.js" style="color: #fff; text-decoration: none;"></script>
+    <script src="./js/scriptSolar.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script>
+        $(window).on('load', function(event) {
+            $('body').removeClass('preloading');
+            $('.load').delay(1000).fadeOut('fast');
+         });
+    </script>
         
 </body>
 </html>

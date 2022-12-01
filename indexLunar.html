@@ -9,15 +9,39 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style_lunar.css">
 
 </head>
-<body>
+<body  class="preloading">
+<div class="load">
+    <img src="./img/Preloader_3.gif">
+</div>
 <div>
-    <button id="stop">Pause</button>
-    <button id="solar-system"><a href="index.html">Hệ Mặt Trời</a></button>
-    <div class="moon">
-       <div class="sun">
+    <button id="stop-eclipse">Pause</button>
+    <ul class="menu">
+        <li>
+          <a href="#">Menu</a>
+          <ul>
+            <li><a href="index.html">Hệ Mặt Trời</a></li>
+            <li><a href="indexLunar.html">Nguyệt Thực</a></li>
+          </ul>
+        </li>
+      </ul>
+    <div class="moon-eclipse">
+       <div class="sun-eclipse">
        </div>
     </div>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
     <script src="./js/scriptLunar.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script>
+        $(window).on('load', function(event) {
+            $('body').removeClass('preloading');
+            $('.load').delay(1000).fadeOut('fast');
+         });
+    </script>
 </div>
 </body>
 </html>
