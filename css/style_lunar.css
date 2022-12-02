@@ -158,7 +158,14 @@ button:hover{
    transform: rotate(300deg);
  }
 }
-
+#circle {
+  margin: 20px 20px 20px 20px;
+  float:left;
+  background: #000;
+  border-radius: 50%;
+  /* border: 11px solid #e6d5dab3; */
+  /* box-shadow:   34px 25px #593dd7; */
+  }
 .container {
     font-size: 50%;
     width: 40em;
@@ -234,4 +241,3 @@ button:hover{
     top: calc(var(--top) * 1em);
     right: calc(var(--right) * 1em);
 }
-

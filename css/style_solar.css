@@ -231,14 +231,14 @@ filter: brightness(30%);
 
 /* Zoom */
 #circle {
-margin: 20px 20px 20px 20px;
 float:left;
 background: #000;
 border-radius: 50%;
-/* box-shadow:   34px 25px #593dd7; */
+margin: 1% ;
+
 }
 .container {
-  font-size: 50%;
+  font-size: 40%;
   width: 40em;
   height: 40em;
   position: relative;
@@ -312,4 +312,3 @@ border-radius: 50%;
   top: calc(var(--top) * 1em);
   right: calc(var(--right) * 1em);
 }
-
