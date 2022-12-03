@@ -56,20 +56,22 @@ html, body {
 } */
 button {
   font-family: ui-sans-serif, sysetm-ui, sans-serif;
-  margin: 5px 5px 5px 5px;
-  float: right;
+  margin: 10px 10px 10px 10px;
+  width:8rem;
+  border-radius: 40px;
   max-width: 60rem;
-  padding: 2rem;
   background-color: rgba(52, 104, 202, 0.419);
   border: 2px solid #040404a8;
-  border-radius: 0.25rem;
   color: #FFF;
-  /* display: inline-block; */
+  display: inline-block;
   margin-block-end: 0.5rem;
   padding: 1rem;
 }
+.control{
+  float: right;
+}
 button:hover{
-background-color: #7b78d6;
+background-color: #1bddee;
 }
 #solar-system, #lunar-eclipse{
   float:left;
@@ -193,12 +195,8 @@ left: 50%;
   z-index: 5;
   animation: Move ease-in-out infinite;
   animation-duration: 21s;
-
-}
-.moon-solar{
-background-image:  url("../img/moon.png");
-background-color: rgba(0, 0, 0, 0.463);
-filter: brightness(30%);
+  background-image:  url("../img/moon.png");
+  background-color: rgba(0, 0, 0, 0.463);
 }
 
 
@@ -229,6 +227,64 @@ filter: brightness(30%);
 }
 }
 
+/*info*/
+
+.sun-solar dl.infos {
+  position: absolute;
+  padding-left: 50%;
+  display: block;
+  /* opacity: 1; */
+  transform: rotateX(0deg);
+  width: 0px;
+  height: 75px;
+  left: 189px;
+  bottom: 182px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew(-35deg, 0deg);
+  box-shadow: inset 1px 1px black;
+}
+
+.sun-solar dl.infos dt {
+  position: absolute;
+  left: 10px;
+  margin-bottom: 15px;
+  bottom: 65px;
+  color: #FFF;
+  font-size: 17px;
+  text-shadow: 1px 1px 2px black;
+  transform: skew( 35deg, 0deg);
+}
+
+.moon-solar dl.infos {
+  position: absolute;
+  padding-left: 50%;
+  display: block;
+  /* opacity: 1; */
+  transform: rotateX(0deg);
+  width: 0px;
+  height: 44%;
+  left: 100%;
+  bottom: -30%;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew(35deg, 0deg);
+  box-shadow: inset 1px -1px black;
+}
+
+.moon-solar dl.infos dt {
+  position: absolute;
+  left: 55%;
+  margin-bottom: -70%;
+  bottom: 90%;
+  background-color: initial;
+  color: #FFF;
+  font-size: 17px;
+  text-shadow: 1px 1px 2px black;
+  transform: skew( -35deg, 0deg);
+}
 /* Zoom */
 #circle {
 float:left;

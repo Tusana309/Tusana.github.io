@@ -9,6 +9,11 @@ html, body {
      margin: 0;
      padding: 0;
 }
+body {
+  background: #010101;
+  overflow: hidden;
+  
+ }
 .menu {
   display: block;
   margin: 5px 5px 5px 5px;
@@ -55,26 +60,25 @@ html, body {
 /* .menu ul a:hover{
   color:#fe1919
 } */
-body {
- background: #010101;
- overflow: hidden;
-}
+
 button {
-     font-family: ui-sans-serif, sysetm-ui, sans-serif;
-     margin: 5px 5px 5px 5px;
-     float: right;
-     max-width: 60rem;
-     padding: 2rem;
-     background-color: rgba(100, 148, 237, 0.977);
-     border: 0;
-     border-radius: 0.25rem;
-     color: #FFF;
-     /* display: inline-block; */
-     margin-block-end: 0.5rem;
-     padding: 1rem;
-   }
+  font-family: ui-sans-serif, sysetm-ui, sans-serif;
+  margin: 10px 10px 10px 10px;
+  width:8rem;
+  border-radius: 40px;
+  max-width: 60rem;
+  background-color: rgba(52, 104, 202, 0.419);
+  border: 2px solid #040404a8;
+  color: #FFF;
+  display: inline-block;
+  margin-block-end: 0.5rem;
+  padding: 1rem;
+}
+.control{
+  float: right;
+}
 button:hover{
-   background-color: #6a66dc;
+background-color: #1bddee;
 }
 #solar-system, #solar-eclipse{
      float:left;
@@ -112,6 +116,7 @@ button:hover{
 }
 .moon-eclipse{
      background-image:  url("../img/moon.png");
+     filter: brightness(2);
 }
 .moon-eclipse:after{
       content: "";
@@ -131,18 +136,18 @@ button:hover{
       position: absolute;
       border-radius: 50%;
 }
-.sun-eclipse {
- position: absolute;
- left: 10px;
- top: 1px;
- width: 250px;
- height: 250px;
- border-radius: 50%;
- background: #010101;
- box-shadow: inset 0 0 50px rgba(150, 150, 150, 0.2);
- animation: eclipse 20s infinite linear;
- transform-origin: 50% 180%;
- transform: rotate(-60deg);
+.earth-eclipse {
+  position: absolute;
+  left: 10px;
+  top: -25px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #010101;
+  box-shadow: inset 0 0 50px rgb(150 150 150 / 20%);
+  animation: eclipse 20s infinite linear;
+  transform-origin: 50% 170%;
+  transform: rotate(-60deg);
 }
 
 @keyframes eclipse {
@@ -158,6 +163,63 @@ button:hover{
    transform: rotate(300deg);
  }
 }
+/*Info*/
+.moon-eclipse dl.infos {
+  position: absolute;
+  padding-left: 50%;
+  display: block;
+  transform: rotateX(0deg);
+  width: 0px;
+  height: 75px;
+  left: 256px;
+  bottom: 200px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew(-35deg, 0deg);
+  box-shadow: inset 1px 1px black;
+}
+.moon-eclipse dl.infos dt {
+  position: absolute;
+  left: 10px;
+  margin-bottom: 15px;
+  bottom: 65px;
+  color: #FFF;
+  font-size: 17px;
+  text-shadow: 1px 1px 2px black;
+  transform: skew( 35deg, 0deg);
+}
+
+.earth-eclipse dl.infos {
+  position: absolute;
+  padding-left: 35%;
+  display: block;
+  transform: rotateX(0deg);
+  width: 0px;
+  height: 65px;
+  left: -35px;
+  bottom: -58px;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-top: none;
+  border-right: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew(-35deg, 0deg);
+  box-shadow: inset -1px -1px black;
+}
+.earth-eclipse dl.infos dt {
+  position: absolute;
+  left: -20px;
+  margin-bottom: -60px;
+  bottom: 65px;
+  color: #FFF;
+  font-size: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  transform: skew( 35deg, 0deg);
+}
+/*Zoom*/
+
 #circle {
   margin: 20px 20px 20px 20px;
   float:left;
