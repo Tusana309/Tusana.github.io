@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thủy Triều</title>
+  <script src="js/tides/tides.js"></script>
+  <script src="js/tides/vector.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/article.css"/>
+  <link rel="stylesheet" href="./css/tides.css">
+</head>
+
+<body class="article">
+  <div class="universe">
+    <div>
+      <ul class="menu">
+          <li>
+            <a href="#">Danh Sách</a>
+            <ul>
+              <li><a href="index.html">Hệ Mặt Trời</a></li>
+              <li><a href="indexSolar.html">Nhật Thực</a></li>
+              <li><a href="indexLunar.html">Nguyệt Thực</a></li>
+            </ul>
+          </li>
+        </ul>
+     </div>
+     <div>
+      <form> 
+        <fieldset>
+            <button type="button" id="btnRun"        onClick="onClickRunStop()" style="width:120px; height:50px;">Tạm Dừng</button>
+            <button type="button" id="btnNeapTide"   onClick="onClickNeapTide()" style="width:120px; height:50px;">Triều Thấp</button>
+            <button type="button" id="btnSpringTide" onClick="onClickSpringTide()" style="width:120px; height:50px;">Triều Cao</button>
+        </fieldset>
+        <fieldset>  
+          <b>Thông tin</b><br/>
+          <input type="checkbox"  name="show orbits" value="true" id="cbShowOrbits" checked       onChange="onShowOrbits()"/> 
+          Quỹ Đạo<br/>
+          <input type="checkbox"  name="show orbits" value="true" id="cbShowMoon" checked  onChange="onShowMoon()"/> 
+          Mặt Trăng<br/>
+          <input type="checkbox"  name="show orbits" value="true" id="cbShowSun"  checked  onChange="onShowSun()"/> 
+          Mặt Trời<br/>
+          <input type="checkbox"  name="force" value="true" id="cbShowOcean"    checked     onChange="onShowOcean()"/>
+          Nước Biển<br/>
+        </fieldset>
+      </form>
+     </div>
+     <div>
+    <table class="noborder">
+      <tr>
+        <td  class="noborder">
+          <canvas id="cvTides2" width="750" height="750"></canvas> 
+        </td>
+        
+      </tr>
+  </table>
+</div>
+	<script>
+                var tidalModel = tidalSimulation({ cvid               : 'cvTides2',
+                                                   path               : './js/tides',	
+                                                   lookAtTarget       : 'Earth',
+                                                   autoMove           : true,
+                                                   setup              : 1,
+	                                                 isRunning          : true,
+                                                   showSun            : true,
+                                                   scaleForceToModel  : false,
+                                                   showMoon           : true,
+                                                   showMoonOrbit      : true,
+                                                   showEarthOrbit     : true, 
+                                                   showSurfacePoints  : false,
+                                                   showGravAcc        : false,
+                                                   showCentAcc        : false,
+                                                   showTidalAcc       : false,
+                                                   showTidalAccSun    : false,
+		                                               showAccSum         : true });
+                updateControls()
+
+                function updateControls() {
+        		// Set up formular controls
+        		
+        		document.getElementById("cbShowOrbits").checked         = tidalModel.config.showEarthOrbit || model2.config.showMoonOrbit;
+        		document.getElementById("cbShowOcean").checked          = tidalModel.config.showAccSum;
+        		document.getElementById("cbShowMoon").checked           = tidalModel.config.showMoon;
+        		document.getElementById("cbShowSun").checked            = tidalModel.config.showSun;
+
+                        if (tidalModel.config.autoMove) {
+                                document.getElementById("btnRun").innerHTML  = "Dừng";
+                        } else {
+                                document.getElementById("btnRun").innerHTML  = "Chạy";
+                        }
+                }
+
+		function onShowOrbits() {
+			var check = document.getElementById("cbShowOrbits").checked;
+                        tidalModel.config.showEarthOrbit = check;
+                        tidalModel.config.showMoonOrbit = check;
+		}
+		function onShowOcean() {
+                        tidalModel.config.showAccSum = document.getElementById("cbShowOcean").checked;
+		}
+		function onShowSun() {
+                        tidalModel.config.showSun = document.getElementById("cbShowSun").checked;
+		}
+		function onShowMoon() {
+                        tidalModel.config.showMoon = document.getElementById("cbShowMoon").checked;
+		}
+		function onClickRunStop() {
+                        if (tidalModel.config.autoMove == false) {
+                                tidalModel.config.autoMove = true
+        
+                        } else {
+                                tidalModel.config.autoMove = false
+
+                        }
+                        updateControls()
+		}
+
+                function onClickNeapTide() {
+                        tidalModel.config.autoMove = false
+                        tidalModel.setPositions(Math.PI, Math.PI*1.5)
+                        tidalModel.update()
+                        tidalModel.render()
+                        updateControls()
+                }
+
+                function onClickSpringTide() {
+                        tidalModel.config.autoMove = false
+                        tidalModel.setPositions(Math.PI*.5, Math.PI*1.5)
+                        tidalModel.update()
+                        tidalModel.render()
+                        updateControls()
+                }
+	</script>
+</body>
+</html>

@@ -221,15 +221,13 @@ background-color: #1bddee;
 /*Zoom*/
 
 #circle {
-  margin: 20px 20px 20px 20px;
   float:left;
   background: #000;
   border-radius: 50%;
-  /* border: 11px solid #e6d5dab3; */
-  /* box-shadow:   34px 25px #593dd7; */
+  margin: 1% ;
   }
 .container {
-    font-size: 50%;
+    font-size: 40%;
     width: 40em;
     height: 40em;
     position: relative;
