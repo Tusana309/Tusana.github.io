@@ -7,8 +7,6 @@
   <title>Thủy Triều</title>
   <script src="js/tides/tides.js"></script>
   <script src="js/tides/vector.js"></script>
-  <link rel="stylesheet" type="text/css" href="./css/index.css"/>
-  <link rel="stylesheet" type="text/css" href="./css/article.css"/>
   <link rel="stylesheet" href="./css/tides.css">
 </head>
 
@@ -26,35 +24,35 @@
           </li>
         </ul>
      </div>
-     <div>
-      <form> 
-        <fieldset>
-            <button type="button" id="btnRun"        onClick="onClickRunStop()" style="width:120px; height:50px;">Tạm Dừng</button>
-            <button type="button" id="btnNeapTide"   onClick="onClickNeapTide()" style="width:120px; height:50px;">Triều Thấp</button>
-            <button type="button" id="btnSpringTide" onClick="onClickSpringTide()" style="width:120px; height:50px;">Triều Cao</button>
-        </fieldset>
-        <fieldset>  
-          <b>Thông tin</b><br/>
-          <input type="checkbox"  name="show orbits" value="true" id="cbShowOrbits" checked       onChange="onShowOrbits()"/> 
-          Quỹ Đạo<br/>
-          <input type="checkbox"  name="show orbits" value="true" id="cbShowMoon" checked  onChange="onShowMoon()"/> 
-          Mặt Trăng<br/>
-          <input type="checkbox"  name="show orbits" value="true" id="cbShowSun"  checked  onChange="onShowSun()"/> 
-          Mặt Trời<br/>
-          <input type="checkbox"  name="force" value="true" id="cbShowOcean"    checked     onChange="onShowOcean()"/>
-          Nước Biển<br/>
-        </fieldset>
-      </form>
+      <div class="dropdown">
+        <button onclick="hamDropdown()" class="nut_dropdown">Cài Đặt</button>
+        <div class="noidung_dropdown">
+          <button type="button" id="btnRun"        onClick="onClickRunStop()" style="width:120px; height:50px;">Tạm Dừng</button><br/>
+          <button type="button" id="btnNeapTide"   onClick="onClickNeapTide()" style="width:120px; height:50px;">Triều Thấp</button><br/>
+          <button type="button" id="btnSpringTide" onClick="onClickSpringTide()" style="width:120px; height:50px;">Triều Cao</button><br/>
+          <fieldset>  
+            <b style="text-align: center;">Thông tin</b><br/>
+            <input type="checkbox"  name="show orbits" value="true" id="cbShowOrbits" checked       onChange="onShowOrbits()"/>
+            Quỹ Đạo<br/>
+            <input type="checkbox"  name="show orbits" value="true" id="cbShowMoon" checked  onChange="onShowMoon()"/> 
+            Mặt Trăng<br/>
+            <input type="checkbox"  name="show orbits" value="true" id="cbShowSun"  checked  onChange="onShowSun()"/> 
+            Mặt Trời<br/>
+            <input type="checkbox"  name="force" value="true" id="cbShowOcean"    checked     onChange="onShowOcean()"/>
+            Nước Biển<br/>
+          </fieldset>
+        </div>
+      </div>
+      <script>
+        function hamDropdown() {
+          document.querySelector(".noidung_dropdown").classList.toggle("hienThi");
+         }
+      </script>
      </div>
-     <div>
-    <table class="noborder">
-      <tr>
-        <td  class="noborder">
-          <canvas id="cvTides2" width="750" height="750"></canvas> 
-        </td>
-        
-      </tr>
-  </table>
+      <div>
+        <canvas id="cvTides2" width="700%" height="750%" style="overflow:auto;"></canvas> 
+      </div>
+    
 </div>
 	<script>
                 var tidalModel = tidalSimulation({ cvid               : 'cvTides2',

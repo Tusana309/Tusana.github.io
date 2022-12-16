@@ -442,7 +442,7 @@ World.prototype.renderUnderlay = function() {
 
 World.prototype.render = function() {
         this.ctx.fillStyle = this.style.colBack
-        this.ctx.fillRect(0,0, this.w, this.h)
+        this.ctx.fillRect(0, 0, this.w, this.h)
 
         if (this.config.showSun) {
                 this.renderSun()

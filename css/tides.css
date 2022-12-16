@@ -2,6 +2,8 @@
 html, body {
     width: 100%;
     overflow-x: hidden;
+    background-image: url("../img/bg-stars.png");
+    position: relative;
 }
   *, *:before, *:after {
     box-sizing: border-box;
@@ -9,21 +11,13 @@ html, body {
     padding: 0;
     
 }
-form{
-    color: #fff;
-    float: right;
-
-}
 .universe {
 
-    background-image: url("../img/bg-stars.png");
-    display: block;
-    position: relative;
 }
-#cvTides2 {
-   
-    padding-left: 50px;
-    padding-right: 10px;
+#cvTides2 {   
+  
+  padding-left: 100px;
+  padding-right: 10px;
 }
 .menu {
     display: block;
@@ -31,6 +25,9 @@ form{
     position: relative;
     width: 200px;
     float: left;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    padding-left: 3%;
   
   }
   .menu:hover, .menu li:hover{
@@ -61,6 +58,7 @@ form{
     opacity: 1;
     transform: translateY(0);
   }
+
   
   .menu ul a {
     color: rgb(236, 225, 225);
@@ -68,3 +66,47 @@ form{
     padding: 5px 20px;
     text-decoration: none;
   }
+
+  /* Nút Dropdown*/
+.nut_dropdown {
+  background-color: #3468ca6b;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  padding-right: 3%;
+  color: white;
+  
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown {
+  /*Ẩn nội dụng các đường dẫn*/
+  display: none;
+  position: absolute;
+  background-color: rgba(82, 78, 78, 0.586);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Thiết kế style cho các đường dẫn tronng Dropdown */
+.noidung_dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.hienThi{
+  display:block;
+}
