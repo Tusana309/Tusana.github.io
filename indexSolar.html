@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style_solar.css">
      
 </head>
-<body class="preloading"> 
+<body> 
     <div class="load">
         <img src="./img/Preloader_3.gif">
     </div>
@@ -58,8 +58,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script>
         $(window).on('load', function(event) {
-            $('body').removeClass('preloading');
-            $('.load').delay(1000).fadeOut('fast');
+            $('.load').delay(800).fadeOut('fast');
          });
     </script>
         

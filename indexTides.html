@@ -11,6 +11,9 @@
 </head>
 
 <body class="article">
+  <div class="load">
+    <img src="./img/Preloader_3.gif">
+  </div> 
   <div class="universe">
     <div>
       <ul class="menu">
@@ -27,33 +30,37 @@
       <div class="dropdown">
         <button onclick="hamDropdown()" class="nut_dropdown">Cài Đặt</button>
         <div class="noidung_dropdown">
-          <button type="button" id="btnRun"        onClick="onClickRunStop()" style="width:120px; height:50px;">Tạm Dừng</button><br/>
-          <button type="button" id="btnNeapTide"   onClick="onClickNeapTide()" style="width:120px; height:50px;">Triều Thấp</button><br/>
-          <button type="button" id="btnSpringTide" onClick="onClickSpringTide()" style="width:120px; height:50px;">Triều Cao</button><br/>
+          <button type="button" id="btnRun"        onClick="onClickRunStop()" >Tạm Dừng</button><br/>
+          <button type="button" id="btnNeapTide"   onClick="onClickNeapTide()" >Triều Cường</button><br/>
+          <button type="button" id="btnSpringTide" onClick="onClickSpringTide()" >Triều Kém</button><br/>
           <fieldset>  
-            <b style="text-align: center;">Thông tin</b><br/>
-            <input type="checkbox"  name="show orbits" value="true" id="cbShowOrbits" checked       onChange="onShowOrbits()"/>
-            Quỹ Đạo<br/>
-            <input type="checkbox"  name="show orbits" value="true" id="cbShowMoon" checked  onChange="onShowMoon()"/> 
-            Mặt Trăng<br/>
-            <input type="checkbox"  name="show orbits" value="true" id="cbShowSun"  checked  onChange="onShowSun()"/> 
-            Mặt Trời<br/>
-            <input type="checkbox"  name="force" value="true" id="cbShowOcean"    checked     onChange="onShowOcean()"/>
-            Nước Biển<br/>
+            <label><input type="checkbox"  name="show orbits" value="true" id="cbShowOrbits" checked       onChange="onShowOrbits()"/>
+            Quỹ Đạo</label>
+            <label><input type="checkbox"  name="show orbits" value="true" id="cbShowMoon" checked  onChange="onShowMoon()"/> 
+            Mặt Trăng</label>
+            <label><input type="checkbox"  name="show orbits" value="true" id="cbShowSun"  checked  onChange="onShowSun()"/> 
+            Mặt Trời</label>
+            <label><input type="checkbox"  name="force" value="true" id="cbShowOcean"    checked     onChange="onShowOcean()"/>
+            Nước Biển</label>
           </fieldset>
         </div>
       </div>
-      <script>
-        function hamDropdown() {
-          document.querySelector(".noidung_dropdown").classList.toggle("hienThi");
-         }
-      </script>
-     </div>
       <div>
         <canvas id="cvTides2" width="700%" height="750%" style="overflow:auto;"></canvas> 
-      </div>
-    
-</div>
+     </div>
+     </div>
+     
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script>
+    $(window).on('load', function(event) {
+        $('.load').delay(800).fadeOut('fast');
+     });
+  </script>
+  <script>
+    function hamDropdown() {
+      document.querySelector(".noidung_dropdown").classList.toggle("hienThi");
+     }
+  </script>
 	<script>
                 var tidalModel = tidalSimulation({ cvid               : 'cvTides2',
                                                    path               : './js/tides',	
@@ -62,15 +69,9 @@
                                                    setup              : 1,
 	                                                 isRunning          : true,
                                                    showSun            : true,
-                                                   scaleForceToModel  : false,
                                                    showMoon           : true,
                                                    showMoonOrbit      : true,
                                                    showEarthOrbit     : true, 
-                                                   showSurfacePoints  : false,
-                                                   showGravAcc        : false,
-                                                   showCentAcc        : false,
-                                                   showTidalAcc       : false,
-                                                   showTidalAccSun    : false,
 		                                               showAccSum         : true });
                 updateControls()
 
@@ -130,5 +131,6 @@
                         updateControls()
                 }
 	</script>
+  
 </body>
 </html>
