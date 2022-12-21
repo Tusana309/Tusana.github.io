@@ -125,9 +125,11 @@ html, body {
   border-radius: 40px;
   margin-left: 20%;
   margin-top: 4%;
+  color: white;
+  background-color: rgba(85, 47, 209, 0.38)
 }
 .noidung_dropdown button:hover {
-  background-color: aqua;
+  background-color: rgba(0, 255, 255, 0.698);
 }
 /* Thiết kế style cho các đường dẫn tronng Dropdown */
 .noidung_dropdown a {
